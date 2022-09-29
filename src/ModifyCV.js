@@ -11,7 +11,11 @@ class ModifyCV extends Component{
             [item] : e.target.value,
         }})
     }
-    handleSubmit = () => {
+    handleSubmit = (data) => {
+        /* we.hereweset({
+            [data]
+        }) */
+        //take in input the current state, and update the app state in the correct section
         return 0;
     }
     render(){

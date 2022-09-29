@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ModifyCV fields={["ciao", "test"]} section="tatata" info={{test: "TITOKORWKORKE"}}/>
+        <ModifyCV fields={["field1", "field2"]} section="sectionTest" info={{field2: "Example Text field2"}}/>
         {/* <ShowCV /> */}
         <p>CIao</p>
       </div>
