@@ -1,25 +1,93 @@
 import './App.css';
-import ModifyCV from "./ModifyCV.js"
+import Personal from "./Personal.js"
 import React, {Component} from "react"
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      personalInfo: {},
-      jobs: {},
-      education: {}
+      personalInfo: {
+        sectionName: "Personal Information",
+        data: new PersonalInfo()
+      },
+      experience: {
+        sectionName: "Experience",
+        data: [
+          new Experience(),
+        ]
+      },
+      education: {
+        sectionName: "Education",
+        data: [
+          new Education(),
+        ]
+      }
     };
   }
+
+  editPersonal = (data) => {
+    this.setState({
+      personalInfo:{
+        data: Object.assign(data)
+      }
+    })
+  }
+  editEducation = (data) => {
+    let newArr = [...data];
+    this.setState({
+      education:{
+        data: newArr,
+      }
+    })
+  }
+  editExperience = (data) => {
+    let newArr = [...data];
+    this.setState({
+      experience:{
+        data: newArr,
+      }
+    })
+  }
+
   render() {
     return (
       <div>
-        <ModifyCV fields={["field1", "field2"]} section="sectionTest" info={{field2: "Example Text field2"}}/>
-        {/* <ShowCV /> */}
-        <p>CIao</p>
+        <Personal data={this.state.personalInfo} endEdit={()=>alert("works!")} editSection={()=>{alert("editttt sectionnnn")}}/>
+        {/* <modify/show personal */}
+        {/* <modify/show experience */}
+        {/* <modify/show education */}
       </div>
     );
   }
 }
 
 export default App;
+
+
+function Experience(){
+  this.position= "";
+  this.company= "";
+  this.description= "";
+  this.location= "";
+  this.startDate= "";
+  this.endDate= "";
+}
+
+function Education(){
+  this.name= ""; //uni or course name
+  this.location= "";
+  this.subject= "";
+  this.qualification= "";
+  this.startDate= "";
+  this.endDate= "";
+}
+
+function PersonalInfo(){
+  this.name = "";
+  this.surname = "";
+  this.dateOfBirth = "";
+  this.mail = "";
+  this.phone = "";
+  this.address = "";
+  this.website = "";
+}
