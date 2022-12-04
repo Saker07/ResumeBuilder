@@ -8,51 +8,41 @@ class App extends Component {
     this.state = {
       personalInfo: {
         sectionName: "Personal Information",
-        data: new PersonalInfo()
+        info: {
+          name: '',
+          surname: '',
+          dateOfBirth: '',
+          email: '',
+          phone: '',
+        },
       },
       experience: {
         sectionName: "Experience",
-        data: [
-          new Experience(),
-        ]
+        items: [],
       },
       education: {
         sectionName: "Education",
-        data: [
-          new Education(),
-        ]
+        items: [],
       }
     };
   }
 
-  editPersonal = (data) => {
+  editSection = (sectionKey, updatedData) => {
+    console.log('---------------------------------')
+    console.log('data to update:' + this.state[sectionKey]);
     this.setState({
-      personalInfo:{
-        data: Object.assign(data)
+      [sectionKey]:{
+        fieldsData: updatedData,
       }
     })
-  }
-  editEducation = (data) => {
-    let newArr = [...data];
-    this.setState({
-      education:{
-        data: newArr,
-      }
-    })
-  }
-  editExperience = (data) => {
-    let newArr = [...data];
-    this.setState({
-      experience:{
-        data: newArr,
-      }
-    })
+    console.log('data updated:' + this.state[sectionKey]);
+    console.log("---------------------------------")
   }
 
   render() {
     return (
       <div>
-        <Personal data={this.state.personalInfo} endEdit={()=>alert("works!")} editSection={()=>{alert("editttt sectionnnn")}}/>
+        <Personal data={this.state.personalInfo}/>
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}
@@ -65,6 +55,7 @@ export default App;
 
 
 function Experience(){
+  //fields data
   this.position= "";
   this.company= "";
   this.description= "";
@@ -74,20 +65,11 @@ function Experience(){
 }
 
 function Education(){
+  //fields data
   this.name= ""; //uni or course name
   this.location= "";
   this.subject= "";
   this.qualification= "";
   this.startDate= "";
   this.endDate= "";
-}
-
-function PersonalInfo(){
-  this.name = "";
-  this.surname = "";
-  this.dateOfBirth = "";
-  this.mail = "";
-  this.phone = "";
-  this.address = "";
-  this.website = "";
 }
