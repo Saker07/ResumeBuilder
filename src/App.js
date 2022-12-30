@@ -1,5 +1,6 @@
 import './App.css';
 import Personal from "./Personal.js"
+import Experience from "./Experience.js"
 import React, {Component} from "react"
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
     return (
       <div>
         <Personal data={this.state.personalInfo}/>
+        <Experience data={this.state.experience}/>
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}
@@ -54,7 +56,7 @@ class App extends Component {
 export default App;
 
 
-function Experience(){
+/* function Experience(){
   //fields data
   this.position= "";
   this.company= "";
@@ -72,4 +74,4 @@ function Education(){
   this.qualification= "";
   this.startDate= "";
   this.endDate= "";
-}
+} */

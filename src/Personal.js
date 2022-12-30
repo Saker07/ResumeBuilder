@@ -1,6 +1,5 @@
 import React from "react"
 import {Component} from "react"
-import Field from "./Field.js"
 
 class Personal extends Component{
     constructor(props){
@@ -27,13 +26,13 @@ class Personal extends Component{
                 <h3>{sectionName}</h3>
                 <label htmlFor='nameInput'>Name: </label>
                 <input id='nameInput' placeholder='name' data-key='name' onChange={this.handleChange} value={info.name}></input>
-                <label htmlFor='surnameInput'>Name: </label>
+                <label htmlFor='surnameInput'>Surname: </label>
                 <input id='surnameInput' placeholder='surname' data-key='surname' onChange={this.handleChange} value={info.surname }></input>
-                <label htmlFor='dateOfBirthInput'>Name: </label>
+                <label htmlFor='dateOfBirthInput'>Date of Birth: </label>
                 <input id='dateOfBirthInput' placeholder='11111111' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth}></input>
-                <label htmlFor='phoneInput'>Name: </label>
+                <label htmlFor='phoneInput'>Phone Number: </label>
                 <input id='phoneInput' placeholder='0123456789' data-key='phone' onChange={this.handleChange} value={info.phone}></input>
-                <label htmlFor='emailInput'>Name: </label>
+                <label htmlFor='emailInput'>Email: </label>
                 <input id='emailInput' placeholder='exmplae@gmail.com' data-key='email' onChange={this.handleChange} value={info.email}></input>
 {/*                 <input type="submit" value="Save" onClick={}></input> */}
             </div>
