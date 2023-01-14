@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
-import Personal from './Personal.js';
-import Experience from './Experience.js';
+import Personal from './Personal';
+import Experience from './Experience';
 
 class App extends Component {
   constructor() {
@@ -29,22 +29,20 @@ class App extends Component {
   }
 
   editSection = (sectionKey, updatedData) => {
-    console.log('---------------------------------');
-    console.log(`data to update:${this.state[sectionKey]}`);
     this.setState({
       [sectionKey]: {
         fieldsData: updatedData,
       },
     });
-    console.log(`data updated:${this.state[sectionKey]}`);
-    console.log('---------------------------------');
   };
 
   render() {
+    const {personalInfo} = this.state;
+    const {experience} = this.state;
     return (
       <div>
-        <Personal data={this.state.personalInfo} />
-        <Experience data={this.state.experience} />
+        <Personal data={personalInfo} />
+        <Experience data={experience} />
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}

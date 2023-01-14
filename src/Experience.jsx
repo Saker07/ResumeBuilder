@@ -1,6 +1,5 @@
-import React from "react"
-import {Component} from "react"
-import Item from "./Item.js"
+import React, {Component} from "react"
+import Item from "./Item"
 
 class Experience extends Component{
     constructor(props){
@@ -10,11 +9,13 @@ class Experience extends Component{
             items:[{},{},{}]
         }
     }
+
     render(){
+        const {items} = this.state;
         return (
             <div>
-                {this.state.items.map((item, i) => (
-                    <Item data={{...this.state.items[i], currId: i}}></Item>
+                {items.map((item, i) => (
+                    <Item data={{...items[i], currId: i}} />
                     ))}
             </div>
         )
@@ -23,4 +24,4 @@ class Experience extends Component{
 
 export default Experience
 
-//Item info={...items[i], currId = i}
+// Item info={...items[i], currId = i}
