@@ -1,14 +1,14 @@
 import './App.css';
-import Personal from "./Personal.js"
-import Experience from "./Experience.js"
-import React, {Component} from "react"
+import React, { Component } from 'react';
+import Personal from './Personal.js';
+import Experience from './Experience.js';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       personalInfo: {
-        sectionName: "Personal Information",
+        sectionName: 'Personal Information',
         info: {
           name: '',
           surname: '',
@@ -18,33 +18,33 @@ class App extends Component {
         },
       },
       experience: {
-        sectionName: "Experience",
+        sectionName: 'Experience',
         items: [],
       },
       education: {
-        sectionName: "Education",
+        sectionName: 'Education',
         items: [],
-      }
+      },
     };
   }
 
   editSection = (sectionKey, updatedData) => {
-    console.log('---------------------------------')
-    console.log('data to update:' + this.state[sectionKey]);
+    console.log('---------------------------------');
+    console.log(`data to update:${this.state[sectionKey]}`);
     this.setState({
-      [sectionKey]:{
+      [sectionKey]: {
         fieldsData: updatedData,
-      }
-    })
-    console.log('data updated:' + this.state[sectionKey]);
-    console.log("---------------------------------")
-  }
+      },
+    });
+    console.log(`data updated:${this.state[sectionKey]}`);
+    console.log('---------------------------------');
+  };
 
   render() {
     return (
       <div>
-        <Personal data={this.state.personalInfo}/>
-        <Experience data={this.state.experience}/>
+        <Personal data={this.state.personalInfo} />
+        <Experience data={this.state.experience} />
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}
@@ -54,7 +54,6 @@ class App extends Component {
 }
 
 export default App;
-
 
 /* function Experience(){
   //fields data
