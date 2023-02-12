@@ -16,33 +16,63 @@ class App extends Component {
           email: '',
           phone: '',
         },
+        flag: 0,
       },
       experience: {
         sectionName: 'Experience',
-        items: [],
+        info: [{
+          title: '',
+          location: '',
+          startDate: '',
+          endDate: '',
+          description: ''
+      }],
+        flag: 0,
       },
       education: {
         sectionName: 'Education',
         items: [],
+        flag: 0,
       },
     };
   }
 
-  editSection = (sectionKey, updatedData) => {
-    this.setState({
+  applyEditSection = (sectionKey, updatedData) => {
+    this.setState((state)=>({
       [sectionKey]: {
-        fieldsData: updatedData,
+        // eslint-disable-next-line react/destructuring-assignment
+        ...state[sectionKey],
+        info: updatedData,
+        flag: 1,
       },
-    });
+    }));
   };
+
+  cancelSection = (sectionKey) => {
+    this.setState((state)=>({
+      [sectionKey]: {
+        ...state[sectionKey],
+        flag: 1,
+      }
+    }))
+  }
+
+  editSection = (sectionKey) => {
+    this.setState((state)=>({
+      [sectionKey]: {
+        ...state[sectionKey],
+        flag: 0,
+      }
+    }))
+  }
 
   render() {
     const {personalInfo} = this.state;
     const {experience} = this.state;
     return (
       <div>
-        <Personal data={personalInfo} />
-        <Experience data={experience} />
+        <Personal data={personalInfo} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
+        <Experience data={experience} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}

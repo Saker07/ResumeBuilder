@@ -9,8 +9,8 @@ class Personal extends Component{
     }
 
     handleChange (e){
-        const {value} = e.target; // il dato
-        const {key} = e.target.dataset; // la key dove mettere il dato
+        const {value} = e.target; // the value
+        const {key} = e.target.dataset; // the key in which to insert the value
         this.setState({
             info:{
                 [key]: value,
@@ -20,27 +20,46 @@ class Personal extends Component{
 
     render(){
         const {sectionName, info} = this.state;
-        return (
-            <div>
-                <h3>{sectionName}</h3>
-                <label htmlFor='nameInput'>Name: 
-                    <input id='nameInput' placeholder='name' data-key='name' onChange={this.handleChange} value={info.name} />
-                </label>
-                <label htmlFor='surnameInput'>Surname: 
-                    <input id='surnameInput' placeholder='surname' data-key='surname' onChange={this.handleChange} value={info.surname } />
-                </label>
-                <label htmlFor='dateOfBirthInput'>Date of Birth: 
-                    <input id='dateOfBirthInput' placeholder='11111111' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth} />
-                </label>
-                <label htmlFor='phoneInput'>Phone Number: 
-                    <input id='phoneInput' placeholder='0123456789' data-key='phone' onChange={this.handleChange} value={info.phone} />
-                </label>
-                <label htmlFor='emailInput'>Email: 
-                    <input id='emailInput' placeholder='exmplae@gmail.com' data-key='email' onChange={this.handleChange} value={info.email} />
-                </label>
-{/*                 <input type="submit" value="Save" onClick={}></input> */}
-            </div>
-        )
+        // eslint-disable-next-line react/destructuring-assignment
+        const {flag} = this.props.data;
+        const {applyEditSection, cancelSection, editSection} = this.props;
+        const sectionKey = 'personalInfo'; // the section key needed for the above functions
+        if(flag === 0){
+            return (
+                <div className="section">
+                    <h3>{sectionName}</h3>
+                    <label htmlFor='nameInput'>Name: 
+                        <input id='nameInput' placeholder='name' data-key='name' onChange={this.handleChange} value={info.name} />
+                    </label>
+                    <label htmlFor='surnameInput'>Surname: 
+                        <input id='surnameInput' placeholder='surname' data-key='surname' onChange={this.handleChange} value={info.surname } />
+                    </label>
+                    <label htmlFor='dateOfBirthInput'>Date of Birth: 
+                        <input id='dateOfBirthInput' placeholder='11111111' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth} />
+                    </label>
+                    <label htmlFor='phoneInput'>Phone Number: 
+                        <input id='phoneInput' placeholder='0123456789' data-key='phone' onChange={this.handleChange} value={info.phone} />
+                    </label>
+                    <label htmlFor='emailInput'>Email: 
+                        <input id='emailInput' placeholder='exmplae@gmail.com' data-key='email' onChange={this.handleChange} value={info.email} />
+                    </label>
+                    <input type="submit" value="Save" onClick={()=>{applyEditSection(sectionKey, info)}}/>
+                    <input type="submit" value="Cancel" onClick={()=>{cancelSection(sectionKey)}}/>
+                </div>
+            )
+        } 
+            return (
+                <div className="section">
+                    <h3>{sectionName}</h3>
+                    <p htmlFor='nameInput'>Name: {info.name}</p>
+                    <p htmlFor='surnameInput'>Surname: {info.surname} </p>
+                    <p htmlFor='dateOfBirthInput'>Date of Birth: {info.dateOfBirth}</p>
+                    <p htmlFor='phoneInput'>Phone Number: {info.phone}</p>
+                    <p htmlFor='emailInput'>Email: {info.email}</p>
+                    <input type="submit" value="Edit" onClick={()=>{editSection(sectionKey)}}/>
+                </div>
+            )
+        
     }
 }
 
