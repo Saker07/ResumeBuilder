@@ -1,12 +1,13 @@
 #root {
   border-style: solid;
+  border-width: 3px;
   margin: 1rem;
 }
 
 .section {
   border-style: solid;
-  border-color: red;
-  border-width: 0 0 1px 0;
+  border-color: gray;
+  border-width: 0 0 2px 0;
   padding: 10px;
 }
 h3 {
@@ -17,8 +18,8 @@ h3 {
 
 .item {
   border-style:solid;
-  border-color: purple;
-  border-width: 0 0 10px 0;
+  border-color: rgb(94, 80, 80);
+  border-width: 0 0 1px 0;
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;

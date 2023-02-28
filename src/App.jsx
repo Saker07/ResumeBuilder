@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import Personal from './Personal';
-import Experience from './Experience';
+import ListSection from './ListSection';
 
 class App extends Component {
   constructor() {
@@ -31,7 +31,13 @@ class App extends Component {
       },
       education: {
         sectionName: 'Education',
-        items: [],
+        info: [{
+          title: '',
+          location: '',
+          startDate: '',
+          endDate: '',
+          description: ''
+      }],
         flag: 0,
       },
     };
@@ -69,10 +75,12 @@ class App extends Component {
   render() {
     const {personalInfo} = this.state;
     const {experience} = this.state;
+    const {education} = this.state;
     return (
       <div>
         <Personal data={personalInfo} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
-        <Experience data={experience} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
+        <ListSection data={experience} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
+        <ListSection data={education} applyEditSection={this.applyEditSection} cancelSection={this.cancelSection} editSection={this.editSection}/>
         {/* <modify/show personal */}
         {/* <modify/show experience */}
         {/* <modify/show education */}

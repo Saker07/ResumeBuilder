@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import ItemEdit from "./ItemEdit"
 import ItemShow from "./ItemShow"
 
-class Experience extends Component{
+class ListSection extends Component{
     constructor(props){
         super(props);
         this.state=this.props.data;
@@ -48,7 +48,7 @@ class Experience extends Component{
         const {info, sectionName} = this.state;
         const {flag} = this.props.data;
         const {applyEditSection, editSection, cancelSection} = this.props;
-        const sectionKey = 'experience';
+        const sectionKey = sectionName.toLowerCase();
         if(flag === 0){
             return (
                 <div className="section">
@@ -75,6 +75,6 @@ class Experience extends Component{
     }
 }
 
-export default Experience
+export default ListSection
 
 // Item info={...items[i], currId = i}
