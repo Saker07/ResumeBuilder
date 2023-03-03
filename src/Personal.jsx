@@ -28,19 +28,19 @@ class Personal extends Component{
             return (
                 <div className="section personal">
                     <h3>{sectionName}</h3>
-                    <label htmlFor='nameInput' className="name">Name: 
+                    <label htmlFor='nameInput' className="name"><span>Name: </span>
                         <input id='nameInput' placeholder='name' data-key='name' onChange={this.handleChange} value={info.name} />
                     </label>
-                    <label htmlFor='surnameInput' className="surname">Surname: 
+                    <label htmlFor='surnameInput' className="surname"><span>Surname: </span>
                         <input id='surnameInput' placeholder='surname' data-key='surname' onChange={this.handleChange} value={info.surname } />
                     </label>
-                    <label htmlFor='dateOfBirthInput' className="dateOfBirth">Date of Birth: 
+                    <label htmlFor='dateOfBirthInput' className="dateOfBirth"><span>Date of Birth: </span>
                         <input id='dateOfBirthInput' placeholder='11111111' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth} />
                     </label>
-                    <label htmlFor='phoneInput' className="phone">Phone Number: 
+                    <label htmlFor='phoneInput' className="phone"><span>Phone Number: </span>
                         <input id='phoneInput' placeholder='0123456789' data-key='phone' onChange={this.handleChange} value={info.phone} />
                     </label>
-                    <label htmlFor='emailInput' className="email">Email: 
+                    <label htmlFor='emailInput' className="email"><span>Email: </span>
                         <input id='emailInput' placeholder='exmplae@gmail.com' data-key='email' onChange={this.handleChange} value={info.email} />
                     </label>
                     <div>
