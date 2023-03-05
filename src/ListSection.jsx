@@ -5,6 +5,7 @@ import ItemShow from "./ItemShow"
 class ListSection extends Component{
     constructor(props){
         super(props);
+        // eslint-disable-next-line react/destructuring-assignment
         this.state=this.props.data;
         this.handleChange = this.handleChange.bind(this);
         this.addItem = this.addItem.bind(this);
@@ -17,13 +18,14 @@ class ListSection extends Component{
         // eslint-disable-next-line react/destructuring-assignment
         const newItems = this.state.info;
         newItems[currId][key] = value;
-        this.setState((state)=>({
+        this.setState(()=>({
             info: newItems,
         }))
     }
 
     addItem(){
-        const newItems = this.state.info;
+        const {info} = this.state;
+        const newItems = info;
         newItems.push({
             title: '',
             location: '',
@@ -37,6 +39,7 @@ class ListSection extends Component{
     }
 
     delItem(currId){
+        // eslint-disable-next-line react/destructuring-assignment, react/no-access-state-in-setstate
         const newItems = this.state.info;
         newItems.splice(currId, 1);
         this.setState({
@@ -46,7 +49,8 @@ class ListSection extends Component{
 
     render(){
         const {info, sectionName} = this.state;
-        const {flag} = this.props.data;
+        const {data} = this.props;
+        const {flag} = data;
         const {applyEditSection, editSection, cancelSection} = this.props;
         const sectionKey = sectionName.toLowerCase();
         if(flag === 0){

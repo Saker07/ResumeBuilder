@@ -3,6 +3,7 @@ body{
   flex-direction: column;
   display: flex;
   align-items: center;
+  background-color: rgb(193, 192, 192);
 }
 #root {
   max-width: 100%;
@@ -11,6 +12,7 @@ body{
   margin: 1rem;
   border-radius: 10px;
   border-color: rgba(0, 0, 0, 0.7);
+  background-color: white;
 }
 
 .section {
@@ -85,6 +87,9 @@ label {
   }
   .phone>span {
     font-size: 0.9rem;
+  }
+  body {
+    background-color: white;
   }
   
 }
