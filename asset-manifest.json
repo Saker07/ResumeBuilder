@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ResumeBuilder/static/css/main.bd30dee6.css",
+    "main.css": "/ResumeBuilder/static/css/main.a930731c.css",
     "main.js": "/ResumeBuilder/static/js/main.6c085b04.js",
     "index.html": "/ResumeBuilder/index.html",
-    "main.bd30dee6.css.map": "/ResumeBuilder/static/css/main.bd30dee6.css.map",
+    "main.a930731c.css.map": "/ResumeBuilder/static/css/main.a930731c.css.map",
     "main.6c085b04.js.map": "/ResumeBuilder/static/js/main.6c085b04.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd30dee6.css",
+    "static/css/main.a930731c.css",
     "static/js/main.6c085b04.js"
   ]
 }
