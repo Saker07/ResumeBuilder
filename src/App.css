@@ -3,7 +3,6 @@ body{
   flex-direction: column;
   display: flex;
   align-items: center;
-  background-color: rgb(193, 192, 192);
 }
 #root {
   min-width: 50%;
@@ -13,6 +12,7 @@ body{
   border-radius: 10px;
   border-color: rgba(0, 0, 0, 0.7);
   background-color: white;
+  box-shadow: 5px 10px 10px 2px grey;
 }
 
 .section {
@@ -88,6 +88,7 @@ label {
 @media only screen and (max-width: 600px) {
   #root {
     border: none;
+    box-shadow: none;
   }
   label {
     flex-direction: column;
