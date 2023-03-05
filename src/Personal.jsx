@@ -11,11 +11,12 @@ class Personal extends Component{
     handleChange (e){
         const {value} = e.target; // the value
         const {key} = e.target.dataset; // the key in which to insert the value
-        this.setState({
-            info:{
-                [key]: value,
-            }
-        })
+        // eslint-disable-next-line react/destructuring-assignment
+        const newInfo = this.state.info;
+        newInfo[key] = value;
+        this.setState(()=>({
+            info: newInfo,
+        }))
     }
 
     render(){
