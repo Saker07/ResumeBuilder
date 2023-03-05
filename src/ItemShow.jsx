@@ -6,11 +6,11 @@ class ItemShow extends Component{
         const {data} = this.props;
         return(
             <div className="item">
-                <p>Title: {data.title}</p>
-                <p>Location: {data.location}</p>
-                <p>Start Date: {data.startDate}</p>
-                <p>End Date: {data.endDate}</p>
-                <p>Description: {data.description}</p>
+                <p><span>Title: </span><span>{data.title}</span></p>
+                <p><span>Location: </span><span>{data.location}</span></p>
+                <p><span>Start Date: </span><span>{data.startDate}</span></p>
+                <p><span>End Date: </span><span>{data.endDate}</span></p>
+                <p className="description"><span>Description: </span><span>{data.description}</span></p>
             </div>
         )
     }

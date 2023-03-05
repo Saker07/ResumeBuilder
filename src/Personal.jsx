@@ -54,11 +54,11 @@ class Personal extends Component{
             return (
                 <div className="section">
                     <h3>{sectionName}</h3>
-                    <p htmlFor='nameInput'>Name: {info.name}</p>
-                    <p htmlFor='surnameInput'>Surname: {info.surname} </p>
-                    <p htmlFor='dateOfBirthInput'>Date of Birth: {info.dateOfBirth}</p>
-                    <p htmlFor='phoneInput'>Phone Number: {info.phone}</p>
-                    <p htmlFor='emailInput'>Email: {info.email}</p>
+                    <p htmlFor='nameInput'><span>Name: </span><span>{info.name}</span></p>
+                    <p htmlFor='surnameInput'><span>Surname: </span><span>{info.surname}</span></p>
+                    <p htmlFor='dateOfBirthInput'><span>Date of Birth: </span><span>{info.dateOfBirth}</span></p>
+                    <p htmlFor='phoneInput'><span>Phone Number: </span><span>{info.phone}</span></p>
+                    <p htmlFor='emailInput'><span>Email: </span><span>{info.email}</span></p>
                     <input type="submit" value="Edit" onClick={()=>{editSection(sectionKey)}}/>
                 </div>
             )
