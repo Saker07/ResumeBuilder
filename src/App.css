@@ -3,6 +3,7 @@ body{
   flex-direction: column;
   display: flex;
   align-items: center;
+  background-color: #f3f3f3;
 }
 #root {
   min-width: 50%;

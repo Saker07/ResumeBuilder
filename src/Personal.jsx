@@ -36,13 +36,13 @@ class Personal extends Component{
                         <input id='surnameInput' placeholder='surname' data-key='surname' onChange={this.handleChange} value={info.surname } />
                     </label>
                     <label htmlFor='dateOfBirthInput' className="dateOfBirth"><span>Date of Birth: </span>
-                        <input id='dateOfBirthInput' placeholder='11111111' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth} />
+                        <input id='dateOfBirthInput' placeholder='01/01/1990' data-key='dateOfBirth' onChange={this.handleChange} value={info.dateOfBirth} />
                     </label>
                     <label htmlFor='phoneInput' className="phone"><span>Phone Number: </span>
                         <input id='phoneInput' placeholder='0123456789' data-key='phone' onChange={this.handleChange} value={info.phone} />
                     </label>
                     <label htmlFor='emailInput' className="email"><span>Email: </span>
-                        <input id='emailInput' placeholder='exmplae@gmail.com' data-key='email' onChange={this.handleChange} value={info.email} />
+                        <input id='emailInput' placeholder='example@gmail.com' data-key='email' onChange={this.handleChange} value={info.email} />
                     </label>
                     <div>
                         <input type="submit" value="Save" onClick={()=>{applyEditSection(sectionKey, info)}} className='save button'/>
